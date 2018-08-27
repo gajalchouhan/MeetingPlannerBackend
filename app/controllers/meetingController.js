@@ -200,9 +200,9 @@ let addMeeting = (req, res) => {
             const mailOptions = {
                 from: 'myedwisormeetingplanner@gmail.com', // sender address
                 to: data.email, // list of receivers
-                subject: 'Please confirm your Email account', // Subject line
+                subject: 'Meeting Created Succesfully', // Subject line
                 text: `Hi! Follwing meeting conducted by ${data.adminName}`,// plain text body
-                html: `Hi! ${data.username} <br> Follwing meeting conducted by ${data.adminName} <br> Meeting Schdule <br>  Purpose : ${data.purpose} <br> Place : ${data.place} <br> Date : ${data.date} <br> Time : ${data.time}`
+                html: `Hi! <br> Follwing meeting conducted by ${data.adminName} <br> Meeting Schdule <br>  Purpose : ${data.purpose} <br> Place : ${data.place} <br> Date : ${data.date} <br> Time : ${data.time}`
                };
                console.log(mailOptions)
                transporter.sendMail(mailOptions, function (err, info) {           
