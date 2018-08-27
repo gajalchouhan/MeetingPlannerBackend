@@ -186,17 +186,17 @@ let signUpFunction = (req, res) => {
             var transporter = nodemailer.createTransport({
                 service: 'Gmail',
                 auth: {
-                    user: 'rameshvasita528@gmail.com',
-                    pass: 'ramesh06121969'
+                    user: 'myedwisormeetingplanner@gmail.com',
+                    pass: 'mymeeting'
                 }
             });
 
             const mailOptions = {
-                from: 'rameshvasita528@gmail.com', // sender address
+                from: 'myedwisormeetingplanner@gmail.com', // sender address
                 to: data.email, // list of receivers
                 subject: 'Please confirm your Email account', // Subject line
                 text: `Hi! ${data.name},Please Click on the link to verify your email.`,// plain text body
-                html:'<a href="http://localhost:4200/verify/'+data.hash+'">http://localhost:4200'+data.hash+'</a>'
+                html:'<a href="http://localhost:4200/verify/'+data.hash+'">http://meetingplanner.gajalportfolio.xyz'+data.hash+'</a>'
                };
                console.log(mailOptions)
                transporter.sendMail(mailOptions, function (err, info) {
@@ -445,18 +445,18 @@ let forgotPassword=(req,res)=>{
     var transporter = nodemailer.createTransport({
         service: 'Gmail',
         auth: {
-               user: 'rameshvasita528@gmail.com',
-               pass: 'ramesh06121969'
+               user: 'myedwisormeetingplanner@gmail.com',
+               pass: 'mymeeting'
            }
        });
      
    let secretKey="babyiloveyou";
    let emailEncrypt=btoa(req.body.email+secretKey);
    const mailOptions = {
-    from: 'rameshvasita528@email.com', // sender address
+    from: 'myedwisormeetingplanner@gmail.com', // sender address
     to: req.body.emailId, // list of receivers
     subject: 'Reset your password', // Subject line
-    html: "<p>Hi!,<br/>Please <a href='http://localhost:4200/changepassword/"+emailEncrypt+"'>Click here</a> to change your password!</p>"
+    html: "<p>Hi!,<br/>Please <a href='http://localhost:420/changepassword/"+emailEncrypt+"'>Click here</a> to change your password!</p>"
    
    };
    console.log(mailOptions)

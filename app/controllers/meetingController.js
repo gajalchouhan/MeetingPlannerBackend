@@ -192,17 +192,17 @@ let addMeeting = (req, res) => {
             var transporter = nodemailer.createTransport({
                 service: 'Gmail',
                 auth: {
-                    user: 'rameshvasita528@gmail.com',
-                    pass: 'ramesh06121969'
+                    user: 'myedwisormeetingplanner@gmail.com',
+                    pass: 'mymeeting'
                 }
             });
 
             const mailOptions = {
-                from: 'rameshvasita528@gmail.com', // sender address
+                from: 'myedwisormeetingplanner@gmail.com', // sender address
                 to: data.email, // list of receivers
                 subject: 'Please confirm your Email account', // Subject line
                 text: `Hi! Follwing meeting conducted by ${data.adminName}`,// plain text body
-                html: `Hi! ${data.userName} <br> Follwing meeting conducted by ${data.adminName} <br> Meeting Schdule <br>  Purpose : ${data.purpose} <br> Place : ${data.where} <br> Date : ${data.date} <br> Time : ${data.time}`
+                html: `Hi! ${data.username} <br> Follwing meeting conducted by ${data.adminName} <br> Meeting Schdule <br>  Purpose : ${data.purpose} <br> Place : ${data.place} <br> Date : ${data.date} <br> Time : ${data.time}`
                };
                console.log(mailOptions)
                transporter.sendMail(mailOptions, function (err, info) {           
