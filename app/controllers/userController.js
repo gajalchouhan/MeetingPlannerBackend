@@ -196,7 +196,7 @@ let signUpFunction = (req, res) => {
                 to: data.email, // list of receivers
                 subject: 'Please confirm your Email account', // Subject line
                 text: `Hi! ${data.name},Please Click on the link to verify your email.`,// plain text body
-                html:'<a href="http://localhost:4200/verify/'+data.hash+'">http://meetingplanner.gajalportfolio.xyz'+data.hash+'</a>'
+                html:'<a href="http://meetingplanner.gajalportfolio.xyz/verify/'+data.hash+'">http://meetingplanner.gajalportfolio.xyz'+data.hash+'</a>'
                };
                console.log(mailOptions)
                transporter.sendMail(mailOptions, function (err, info) {
@@ -456,7 +456,7 @@ let forgotPassword=(req,res)=>{
     from: 'myedwisormeetingplanner@gmail.com', // sender address
     to: req.body.emailId, // list of receivers
     subject: 'Reset your password', // Subject line
-    html: "<p>Hi!,<br/>Please <a href='http://localhost:420/changepassword/"+emailEncrypt+"'>Click here</a> to change your password!</p>"
+    html: "<p>Hi!,<br/>Please <a href='http://meetingplanner.gajalportfolio.xyz/changepassword/"+emailEncrypt+"'>Click here</a> to change your password!</p>"
    
    };
    console.log(mailOptions)
